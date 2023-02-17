@@ -37,20 +37,20 @@ commands:
             sudo npm install -g typescript
 
 
-  # destroy-environment:
-  #     description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
-  #     parameters:
-  #       Workflow_ID:
-  #         type: string
-  #         default: ${CIRCLE_WORKFLOW_ID:0:7}
-  #     steps:
-  #       - run:
-  #           name: Destroy environments
-  #           when: on_fail
-  #           command: |
-  #             aws cloudformation delete-stack --stack-name udapeople-backend-<< parameters.Workflow_ID >>
-  #             aws cloudformation delete-stack --stack-name udapeople-frontend-<< parameters.Workflow_ID >>
-  #             aws s3 rm s3://udapeople-<<parameters.Workflow_ID>> --recursive
+  destroy-environment:
+      description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
+      parameters:
+        Workflow_ID:
+          type: string
+          default: ${CIRCLE_WORKFLOW_ID:0:7}
+      steps:
+        - run:
+            name: Destroy environments
+            when: on_fail
+            command: |
+              aws cloudformation delete-stack --stack-name udapeople-backend-<< parameters.Workflow_ID >>
+              aws cloudformation delete-stack --stack-name udapeople-frontend-<< parameters.Workflow_ID >>
+              aws s3 rm s3://udapeople-<<parameters.Workflow_ID>> --recursive
 
 
   revert-migrations:
@@ -211,7 +211,7 @@ jobs:
             - project/.circleci/ansible/inventory.txt  
 
 
-      # - destroy-environment 
+      - destroy-environment 
 
 
   configure-infrastructure:
@@ -231,7 +231,7 @@ jobs:
             cat inventory.txt
             ansible-playbook -i inventory.txt configure-server.yml
 
-      # - destroy-environment   
+      - destroy-environment   
 
 
   run-migrations:
@@ -255,7 +255,7 @@ jobs:
             then
               curl https://kvdb.io/${KVDB_BUCKET}/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
             fi
-      # - destroy-environment
+      - destroy-environment
       - revert-migrations      
         
 
