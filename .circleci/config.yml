@@ -404,7 +404,7 @@ jobs:
                 --template-file .circleci/files/cloudfront.yml \
                 --parameter-overrides WorkflowID="${CIRCLE_WORKFLOW_ID:0:7}" \
                 --stack-name InitialStack
-                --tags project=udapeople-app
+              
 
 # Here's where you will add some code to rollback on failure  
      
