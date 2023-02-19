@@ -1,0 +1,27 @@
+[URL01]
+
+https://github.com/ShroukRamadan/Udapeople-App
+
+
+
+[URL02]
+
+http://udapeople-d6349ad.s3-website-us-east-1.amazonaws.com
+
+
+[URL03]
+
+https://d1whdhm40b5q7b.cloudfront.net
+
+
+#### Public URLs to deployed application back-end in EC2 [URL04] The last deployed instance Public IP Address / DNS Name
+
+http://54.89.30.72:3030
+
+
+
+[URL05] 
+
+http://3.222.115.47:9090
+
+
