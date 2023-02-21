@@ -15,14 +15,16 @@ https://udapeople-9d8222e.s3.amazonaws.com/index.html#/employees
 http://d1whdhm40b5q7b.cloudfront.net/#/employees
 
 
+
+
 [URL04] 
 
-http://54.196.232.11:3030/api/status
+http://100.25.146.253:3030/api/status
 
 
 
 [URL05] 
 
-http://3.222.115.47:9090
+http://44.193.199.193:9090
 
 
